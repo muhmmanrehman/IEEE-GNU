@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IEEE GNU · Guru Nanak University</title>
+    <!-- Font Awesome 6 (free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background: #f4f7fc;
+            color: #1e2b3c;
+            line-height: 1.5;
+        }
+
+        /* ===== MANUAL LOGO PLACEHOLDER ===== */
+        /* Replace the background image in .logo-image with your own logo file */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: white;
+            padding: 0.6rem 2.5rem;
+            box-shadow: 0 4px 12px rgba(0,45,80,0.05);
+            flex-wrap: wrap;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .logo-image {
+            width: 48px;
+            height: 48px;
+            background: url('GNU-logo.png') no-repeat center/contain;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.8rem;
+            text-align: center;
+        }
+
+        .logo-text {
+            font-weight: 600;
+            font-size: 1.3rem;
+            color: #003b6f;
+            letter-spacing: -0.3px;
+            line-height: 1.2;
+        }
+        .logo-text small {
+            display: block;
+            font-size: 0.75rem;
+            color: #2c5779;
+            font-weight: 400;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            font-weight: 500;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #1e3a5f;
+            font-size: 1rem;
+            transition: 0.1s;
+            padding: 0.4rem 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-links a:hover {
+            border-bottom-color: #ffb347;
+            color: #003b6f;
+        }
+
+        .brand-sub {
+            background: #e6f0ff;
+            padding: 0.3rem 2.5rem;
+            font-size: 0.95rem;
+            color: #1e3a5f;
+            font-weight: 500;
+            border-bottom: 1px solid #bdd3f0;
+        }
+        .brand-sub i {
+            color: #f4b942;
+            margin-right: 6px;
+        }
+
+        /* ===== HERO WITH MANUAL BACKGROUND BANNER ===== */
+        /* Replace the background image in .hero with your own banner */
+        .hero {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url('GNU-entrance-gate.jpg') no-repeat center/cover;
+            color: white;
+            padding: 3rem 2.5rem 4rem 2.5rem;
+            margin: 0;
+            border-radius: 0 0 2.5rem 2.5rem;
+            position: relative;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* if you want a pure image banner without overlay, remove background-blend-mode and adjust */
+        .hero-content {
+            max-width: 700px;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            margin: 0 auto;
+            padding-bottom: 6rem;
+        }
+
+        .hero .ieee-tag {
+            font-size: 1.1rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            color: #ffda8b;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .university-line {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 0.8rem;
+            color: #cfdfff;
+        }
+
+        .hero .university-line i {
+            margin-right: 8px;
+            color: #ffb347;
+        }
+
+        .hero .tagline {
+            font-size: 2rem;
+            font-weight: 600;
+            margin: 1.2rem 0 0.8rem;
+        }
+
+        .hero .description {
+            font-size: 1.1rem;
+            max-width: 600px;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            justify-content: space-between;
+            width: 100%;
+            position: absolute;
+            bottom: 2rem;
+            left: 2.5rem;
+            right: 2.5rem;
+        }
+
+        .btn {
+            background: white;
+            color: #003b6f;
+            padding: 0.8rem 2.5rem;
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: 2px solid transparent;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn:hover {
+            background: #ffd966;
+            color: #003b6f;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 20px -10px rgba(0,0,0,0.3);
+        }
+
+        .btn-outline:hover {
+            background: white;
+            border-color: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 2.5rem;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: #003b6f;
+            margin: 2.5rem 0 1.5rem;
+            border-left: 8px solid #ffb347;
+            padding-left: 1.2rem;
+            text-align: center;
+        }
+
+        .grid-3, .grid-4, .grid-2 {
+            display: grid;
+            grid-gap: 1.8rem;
+        }
+
+        .grid-3 { grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); }
+        .grid-4 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+        .grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+
+        .card {
+            background: white;
+            border-radius: 24px;
+            padding: 1.8rem 1.5rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+            border: 1px solid rgba(0,59,111,0.08);
+        }
+
+        .card:hover {
+            box-shadow: 0 15px 30px rgba(0,87,163,0.1);
+            border-color: #c2dbff;
+        }
+
+        .icon-large {
+            font-size: 2.4rem;
+            color: #0057a3;
+            margin-bottom: 1rem;
+        }
+
+        .team-member {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            border-bottom: 1px solid #e2ecfe;
+            padding: 0.8rem 0;
+        }
+        .team-member:last-child { border: none; }
+
+        .member-icon {
+            background: #003b6f;
+            width: 45px;
+            height: 45px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        .about-block {
+            background: #e3eefc;
+            border-radius: 2rem;
+            padding: 2.5rem 2rem;
+            margin: 2rem 0;
+        }
+
+        .what-we-do ul {
+            columns: 2 220px;
+            list-style: none;
+            margin-top: 1rem;
+        }
+        .what-we-do li {
+            margin-bottom: 0.7rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .what-we-do li i {
+            color: #0057a3;
+            width: 1.5rem;
+        }
+
+        .event-item {
+            background: #f9fcff;
+            border-radius: 1rem;
+            padding: 1.2rem 1.5rem;
+            margin-bottom: 1rem;
+            border-left: 5px solid #ffb347;
+        }
+
+        .contact-info p {
+            margin: 0.7rem 0;
+            font-size: 1.1rem;
+        }
+        .contact-info i {
+            width: 2rem;
+            color: #0057a3;
+        }
+
+        hr {
+            border: none;
+            border-top: 2px dashed #b3cef0;
+            margin: 2.5rem 0;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            color: #5f7d9c;
+            font-size: 0.95rem;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #003b6f;
+            color: white;
+            width: 48px;
+            height: 48px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            cursor: pointer;
+            opacity: 0.7;
+            transition: 0.2s;
+            border: none;
+            z-index: 99;
+        }
+        .back-to-top:hover {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 700px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.8rem;
+                padding: 1rem 1.5rem;
+            }
+            .hero h1 { font-size: 2.5rem; }
+            .hero { padding: 2rem 1.5rem; }
+            .container { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation bar with manual logo placeholder -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <!-- 
+                ===== MANUAL LOGO =====
+                Replace the div below with your <img> tag or background image.
+                Example: <img src="your-logo.png" alt="IEEE GNU logo" style="height:50px; width:auto;">
+                or keep as is and update background in .logo-image
+            -->
+            <div class="logo-image" title="Place your logo here (image or background)"></div>
+            <div class="logo-text">
+                IEEE GNU <small>Student Branch</small>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="brand-sub">
+        <i class="fas fa-bolt"></i> IEEE GNU Student Branch · Guru Nanak University, Ibrahimpatnam
+    </div>
+
+    <!-- Hero section with background banner placeholder -->
+    <div class="hero">
+        <!-- 
+            ===== MANUAL BACKGROUND BANNER =====
+            The background is set on .hero. Replace the current background 
+            with your image: e.g., background: url('your-banner.jpg') no-repeat center/cover;
+            You may remove background-blend-mode if you don't want the overlay.
+        -->
+        <div class="hero-content">
+            <div class="ieee-tag">IEEEGNU Student Branch</div>
+            <h1>Guru Nanak University,<br>Ibrahimpatnam</h1>
+            <div class="university-line"><i class="fas fa-landmark"></i> UNIVERSITY</div>
+            <div class="tagline">Innovate · Learn · Lead</div>
+            <div class="description">
+                Empowering students through technology, innovation, and professional development. 
+                Join us in shaping the future of engineering and technology.
+            </div>
+            <div class="btn-group">
+                <a href="#" class="btn" id="learnMoreBtn"><i class="fas fa-arrow-right"></i> Learn More</a>
+                <a href="#contact" class="btn btn-outline" id="getInTouchBtn"><i class="fas fa-envelope"></i> Get in Touch</a>
+            </div>
+        </div>
+    </div>
+
+    <main class="container">
+        <!-- Why Join IEEE GNU? (benefits cards) - keep full content -->
+        <h2 class="section-title">Why Join IEEE GNU?</h2>
+        <div class="grid-3">
+            <div class="card"><i class="fas fa-laptop-code icon-large"></i><h3>Technical Workshops</h3><p>Hands-on workshops on cutting-edge technologies, programming languages, and industry tools.</p></div>
+            <div class="card"><i class="fas fa-globe icon-large"></i><h3>Networking</h3><p>Connect with professionals, alumni, and peers from around the world through IEEE's global network.</p></div>
+            <div class="card"><i class="fas fa-trophy icon-large"></i><h3>Competitions</h3><p>Participate in hackathons, coding competitions, and project showcases to test your skills.</p></div>
+            <div class="card"><i class="fas fa-flask icon-large"></i><h3>Research Opportunities</h3><p>Access to IEEE research papers, journals, and collaboration opportunities with faculty.</p></div>
+            <div class="card"><i class="fas fa-briefcase icon-large"></i><h3>Career Development</h3><p>Resume building, interview preparation, and career guidance from industry experts.</p></div>
+            <div class="card"><i class="fas fa-users icon-large"></i><h3>Leadership Skills</h3><p>Develop leadership and management skills by organizing events and leading teams.</p></div>
+        </div>
+
+        <!-- About IEEE GNU (mission, vision, what we do) -->
+        <div class="about-block" id="about">
+            <h2 style="font-size:2rem; color:#003b6f; margin-bottom:0.2rem;">About IEEE GNU</h2>
+            <p style="margin-bottom:1.5rem;"><strong>Established in 2025</strong> at Guru Nanak University, Ibrahimpatnam, Hyderabad</p>
+            <div class="mission-vision">
+                <div class="mission"><h3><i class="fas fa-bullseye" style="margin-right:10px;"></i> Our Mission</h3><p>To foster a culture of innovation and technological excellence among students at Guru Nanak University. We aim to provide a platform for students to enhance their technical skills, engage in research, and connect with industry professionals.</p></div>
+                <div class="vision"><h3><i class="fas fa-eye" style="margin-right:10px;"></i> Our Vision</h3><p>To be the leading student organization that bridges the gap between academic learning and industry requirements, preparing students for successful careers in technology and engineering fields.</p></div>
+            </div>
+            <div class="what-we-do">
+                <h3><i class="fas fa-tasks"></i> What We Do</h3>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> Organize technical workshops & seminars on emerging technologies</li>
+                    <li><i class="fas fa-check-circle"></i> Conduct coding competitions and hackathons</li>
+                    <li><i class="fas fa-check-circle"></i> Facilitate industry visits and internship opportunities</li>
+                    <li><i class="fas fa-check-circle"></i> Provide access to IEEE's vast library of technical resources</li>
+                    <li><i class="fas fa-check-circle"></i> Host guest lectures from industry experts and researchers</li>
+                    <li><i class="fas fa-check-circle"></i> Support student research projects and paper publications</li>
+                    <li><i class="fas fa-check-circle"></i> Create networking opportunities with professionals and alumni</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Our Team (professional + student exec) -->
+        <h2 class="section-title" id="team">Our Team</h2>
+        <p class="badge" style="margin-bottom:1rem;">Meet the dedicated individuals leading IEEE GNU</p>
+        
+        <div style="display: flex; flex-wrap: wrap; gap: 2rem;">
+            <!-- Professional members -->
+            <div style="flex: 2 1 300px;">
+                <h3 style="color:#003b6f; margin-bottom:1rem;"><i class="fas fa-user-tie"></i> Professional Members</h3>
+                <div class="card">
+                    <div class="team-member"><div class="member-icon">KK</div><div class="member-detail"><p>Dr. K. Kishan Rao</p><span>Institute Head</span></div></div>
+                    <div class="team-member"><div class="member-icon">MM</div><div class="member-detail"><p>Dr. M. Maulavi</p><span>Student Branch Counselor</span></div></div>
+                    <div class="team-member"><div class="member-icon">KS</div><div class="member-detail"><p>Mr. K. Sai Kumar</p><span>Student Branch Coordinator</span></div></div>
+                </div>
+            </div>
+            <!-- Student Executive Committee -->
+            <div style="flex: 3 1 400px;">
+                <h3 style="color:#003b6f; margin-bottom:1rem;"><i class="fas fa-user-graduate"></i> Student Executive Committee</h3>
+                <div class="grid-4">
+                    <div class="card" style="padding:1.2rem;"><i class="fas fa-crown" style="color:#f4b942;"></i> <strong>SK</strong><br><span>Chairperson</span></div>
+                    <div class="card" style="padding:1.2rem;"><i class="fas fa-star"></i> <strong>PR</strong><br><span>Vice Chairperson</span></div>
+                    <div class="card" style="padding:1.2rem;"><i class="fas fa-pen"></i> <strong>AS</strong><br><span>Secretary</span></div>
+                    <div class="card" style="padding:1.2rem;"><i class="fas fa-coins"></i> <strong>NK</strong><br><span>Treasurer</span></div>
+                    <div class="card" style="padding:1.2rem;"><i class="fas fa-bullhorn"></i> <strong>RP</strong><br><span>Public Relations Officer</span></div>
+                    <div class="card" style="padding:1.2rem;"><i class="fas fa-calendar-alt"></i> <strong>SM</strong><br><span>Events Coordinator</span></div>
+                    <div class="card" style="padding:1.2rem;"><i class="fas fa-bullhorn"></i> <strong>Vikram Kumar</strong><br><span>Public Relations Officer</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Events section -->
+        <h2 class="section-title" id="events">Events</h2>
+        <p style="font-size:1.2rem; margin-bottom:1rem;">Stay tuned for upcoming workshops, seminars, and competitions</p>
+        <div class="grid-2">
+            <div class="card">
+                <h3><i class="fas fa-clock"></i> Upcoming Events</h3>
+                <p>We’re planning exciting events for the upcoming semester. Check back soon for updates on workshops, technical talks, and competitions!</p>
+                <div class="event-item"><i class="fas fa-flask"></i> AI/ML workshop — dates TBA</div>
+                <div class="event-item"><i class="fas fa-code"></i> Hackathon 2025 (coming)</div>
+            </div>
+            <div class="card">
+                <h3><i class="fas fa-list-check"></i> What to Expect</h3>
+                <ul style="list-style-type: none; padding-left:0;">
+                    <li><i class="fas fa-robot" style="margin-right:0.7rem;"></i> Technical workshops on AI, Machine Learning, Web Dev</li>
+                    <li><i class="fas fa-chalkboard-user"></i> Guest lectures from industry professionals</li>
+                    <li><i class="fas fa-laptop"></i> Coding competitions and hackathons</li>
+                    <li><i class="fas fa-file-powerpoint"></i> Project exhibitions & paper presentations</li>
+                    <li><i class="fas fa-building"></i> Industry visits and networking sessions</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Contact Us -->
+        <h2 class="section-title" id="contact">Contact Us</h2>
+        <div class="grid-2" style="margin-bottom:2rem;">
+            <div class="card contact-info">
+                <p><i class="fas fa-map-pin"></i> <strong>Location</strong><br>Guru Nanak University, Ibrahimnagar, Hyderabad, Telangana, India</p>
+                <p><i class="fas fa-phone-alt"></i> <strong>Phone</strong><br>+91 0000 0000 0000</p>
+                <p><i class="fas fa-envelope"></i> <strong>Email</strong><br>IEEE@gnu.org</p>
+            </div>
+            <div class="card">
+                <h3>Get In Touch</h3>
+                <p>Have questions? Reach out to us anytime. Follow us on social media for the latest updates.</p>
+                <div style="margin-top:1rem; font-size:1.8rem; color:#003b6f;">
+                    <i class="fab fa-linkedin" style="margin-right:15px;"></i>
+                    <i class="fab fa-instagram" style="margin-right:15px;"></i>
+                    <i class="fab fa-github"></i>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+        <footer>
+            &copy; 2025 IEEE GNU Student Branch, Guru Nanak University. All rights reserved. <br>
+            <span style="opacity:0.7;">Innovate • Learn • Lead</span>
+        </footer>
+    </main>
+
+    <button class="back-to-top" id="scrollTopBtn" title="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+    <script>
+        (function() {
+            // smooth scroll for "Learn More" (to #about) and "Get in Touch" (to #contact)
+            const learnMore = document.getElementById('learnMoreBtn');
+            const getInTouch = document.getElementById('getInTouchBtn');
+
+            function smoothScroll(target) {
+                const element = document.querySelector(target);
+                if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+
+            if (learnMore) {
+                learnMore.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    smoothScroll('#about');
+                });
+            }
+            if (getInTouch) {
+                getInTouch.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    smoothScroll('#contact');
+                });
+            }
+
+            const topBtn = document.getElementById('scrollTopBtn');
+            topBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const href = link.getAttribute('href');
+                    if (href && href.startsWith('#')) {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        })();
+    </script>
+    <style>
+        .contact-info .fab { cursor: pointer; transition: 0.1s; }
+        .contact-info .fab:hover { color: #ffb347; }
+    </style>
+</body>
+</html>
