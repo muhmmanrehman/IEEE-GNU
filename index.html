@@ -470,8 +470,7 @@
         }
 
         .team-subsection {
-            flex: 1;
-            min-width: 300px;
+            width: 100%;
         }
 
         .team-subsection h3 {
@@ -949,83 +948,71 @@
             <!-- Professional Members -->
             <div class="team-subsection">
                 <h3><i class="fas fa-user-tie"></i> Professional Members</h3>
-                <div class="card">
-                    <div class="team-member">
-                        <div class="member-icon">KK</div>
-                        <div class="member-detail">
-                            <p>Dr. K. Kishan Rao</p>
-                            <span>Institute Head</span>
-                        </div>
+                <div class="team-grid">
+                    <div class="team-card">
+                        <img src="images/team-placeholder.jpg" alt="Dr. K. Kishan Rao" class="team-profile-img">
+                        <h3>Dr. K. Kishan Rao</h3>
+                        <div class="team-role">Institute Head</div>
                     </div>
-                    <div class="team-member">
-                        <div class="member-icon">MM</div>
-                        <div class="member-detail">
-                            <p>Dr. M. Maulavi</p>
-                            <span>Student Branch Counselor</span>
-                        </div>
+
+                    <div class="team-card">
+                        <img src="images/team-placeholder.jpg" alt="Dr. M. Maulavi" class="team-profile-img">
+                        <h3>Dr. M. Maulavi</h3>
+                        <div class="team-role">Student Branch Counselor</div>
                     </div>
-                    <div class="team-member">
-                        <div class="member-icon">KS</div>
-                        <div class="member-detail">
-                            <p>Mr. K. Sai Kumar</p>
-                            <span>Student Branch Coordinator</span>
-                        </div>
+
+                    <div class="team-card">
+                        <img src="images/team-placeholder.jpg" alt="Mr. K. Sai Kumar" class="team-profile-img">
+                        <h3>Mr. K. Sai Kumar</h3>
+                        <div class="team-role">Student Branch Coordinator</div>
                     </div>
                 </div>
             </div>
 
-            <!-- Student Executive Committee (REDESIGNED WITH PROFILE IMAGES) -->
+            <!-- Student Executive Committee -->
             <div class="team-subsection">
                 <h3><i class="fas fa-user-graduate"></i> Student Executive Committee</h3>
                 <div class="team-grid">
-                    <!-- Team card template with profile image -->
                     <div class="team-card">
                         <img src="images/team-placeholder.jpg" alt="Chairperson" class="team-profile-img">
-                        <h3>SK</h3>
-                        <div class="team-role"><i class="fas fa-crown"></i> Chairperson</div>
-                        <p>Leading innovation and technical initiatives.</p>
+                        <h3>Sai Krishna</h3>
+                        <div class="team-role">Chairperson</div>
                     </div>
 
                     <div class="team-card">
                         <img src="images/team-placeholder.jpg" alt="Vice Chairperson" class="team-profile-img">
-                        <h3>PR</h3>
-                        <div class="team-role"><i class="fas fa-star"></i> Vice Chairperson</div>
-                        <p>Supporting strategic growth and planning.</p>
+                        <h3>Priya Reddy</h3>
+                        <div class="team-role">Vice Chairperson</div>
                     </div>
 
                     <div class="team-card">
                         <img src="images/team-placeholder.jpg" alt="Secretary" class="team-profile-img">
-                        <h3>AS</h3>
-                        <div class="team-role"><i class="fas fa-pen"></i> Secretary</div>
-                        <p>Managing communications and documentation.</p>
+                        <h3>Aditya Sharma</h3>
+                        <div class="team-role">Secretary</div>
                     </div>
 
                     <div class="team-card">
                         <img src="images/team-placeholder.jpg" alt="Treasurer" class="team-profile-img">
-                        <h3>NK</h3>
-                        <div class="team-role"><i class="fas fa-coins"></i> Treasurer</div>
-                        <p>Handling finances and budgets.</p>
+                        <h3>Neha Kumari</h3>
+                        <div class="team-role">Treasurer</div>
                     </div>
 
                     <div class="team-card">
-                        <img src="images/team-placeholder.jpg" alt="PRO" class="team-profile-img">
-                        <h3>RP</h3>
-                        <div class="team-role"><i class="fas fa-bullhorn"></i> Public Relations Officer</div>
-                        <p>Building external relationships and networks.</p>
+                        <img src="images/team-placeholder.jpg" alt="Technical Lead" class="team-profile-img">
+                        <h3>Rahul Patel</h3>
+                        <div class="team-role">Technical Lead</div>
                     </div>
 
                     <div class="team-card">
                         <img src="images/team-placeholder.jpg" alt="Events Coordinator" class="team-profile-img">
-                        <h3>SM</h3>
-                        <div class="team-role"><i class="fas fa-calendar-alt"></i> Events Coordinator</div>
-                        <p>Organizing workshops, talks, and events.</p>
+                        <h3>Sneha Mehta</h3>
+                        <div class="team-role">Events Coordinator</div>
                     </div>
 
                     <div class="team-card">
-                        <img src="images/team-placeholder.jpg" alt="Vikram Kumar" class="team-profile-img">
-                        <h3>VK</h3>
-                        <div class="team-role"><i class="fas fa-megaphone"></i> Public Relations Officer</div>
-                        <p>Connecting our community with the world.</p>
+                        <img src="images/team-placeholder.jpg" alt="Public Relations Officer" class="team-profile-img">
+                        <h3>Vikram Kumar</h3>
+                        <div class="team-role">Public Relations Officer</div>
                     </div>
                 </div>
             </div>
@@ -1196,7 +1183,9 @@
 
         /* Badge styling */
         .badge {
-            display: inline-block;
+            display: block;
+            width: fit-content;
+            margin: 0 auto;
             background: linear-gradient(135deg, var(--primary-blue), var(--accent-blue));
             color: white;
             padding: 8px 16px;
